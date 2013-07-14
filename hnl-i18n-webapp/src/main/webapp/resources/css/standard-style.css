@@ -33,8 +33,9 @@
 
 * { padding:0; margin:0; outline:0; }
 body {
-	background:#fff;
-	font-family: Arial, sans-serif;
+	background-image:url('images/bg/bg_skyblue.jpg');
+    background-repeat:repeat-x;
+    font-family: Arial, sans-serif;
 	font-size:12px;
 	line-height:17px;
 	color:#5d5d5d;
