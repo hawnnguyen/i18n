@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Hawn Nguyen i18n Sample Webapp</title>
+<style>
+body{
+    background-image:url('resources/images/bg/bg_skyblue.jpg');
+    background-repeat:repeat-x;
+    font-family: Arial, sans-serif;
+	font-size:12px;
+	line-height:17px;
+	color:#5d5d5d;
+	padding-bottom:10px;
+}
+a img { border:0; }
+a { color:#0095aa; text-decoration: underline; cursor:pointer; }
+a:hover { color:#5d5d5d; text-decoration: none; }
+</style>
+
+</h:head>
+
+<h:body>
+	<f:view locale="#{languageBeanAction.locale}">
+		<div id="top">
+			<div class="shell">
+				<h1 id="logo">
+					<img id="image-logo" alt="logo"
+						src="resources/images/logo/hawnnguyen_bw_408x75.png" width="300"
+						height="71" />
+				</h1>
+			</div>
+		</div>
+		<!-- Main -->
+		<div class="main-content">
+			<center>
+				<h:form id="indexForm">
+
+					<p>Simplified GUI DEMO for a i18n:</p>
+					<h1>
+						<h:outputText value="#{msg.greetings}" />
+					</h1>
+						<br />
+					<p>
+						<h:outputText value="#{msg.welcome}" />
+					</p>
+					<br />
+					<h:outputText value="#{msg.currentLocale}" /> &nbsp;
+						<h:outputText value="#{languageBeanAction.locale}" />
+					<p>
+						<h:outputText value="#{msg.selectLanguage}" />
+					</p>
+					
+						<br/><h:commandLink id="en_US" action="setLanguage"
+								actionListener="#{languageBeanAction.setLanguage}"
+								value="#{msg.englishLabel}" />
+						<br/><h:commandLink id="de_DE" action="setLanguage"
+								actionListener="#{languageBeanAction.setLanguage}"
+								value="#{msg.germanLabel}" />
+						<br/><h:commandLink id="zh_TW" action="setLanguage"
+								actionListener="#{languageBeanAction.setLanguage}"
+								value="#{msg.traditionalChineseLabel}" />
+						<br/><h:commandLink id="fr_FR" action="setLanguage"
+								actionListener="#{languageBeanAction.setLanguage}"
+								value="#{msg.frenchLabel}" />
+					
+				</h:form>
+			</center>
+		</div>
+	</f:view>
+
+</h:body>
+</html>

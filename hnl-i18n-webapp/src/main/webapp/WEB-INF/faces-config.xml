@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<faces-config
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+    http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd"
+    version="2.0">
+
+
+	<managed-bean>
+		<managed-bean-name>languageBeanAction</managed-bean-name>
+		<managed-bean-class>
+			com.hnl.i18n.action.LanguageBeanAction
+		</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>localeOrderSequence</managed-bean-name>
+		<managed-bean-class>
+			com.hnl.i18n.rb.bundles.LocaleOrderSequence
+		</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<map-entries>
+			<key-class>java.lang.Integer</key-class>
+			<value-class>java.lang.String</value-class>
+			<map-entry>
+				<key>3</key>
+				<value>fr_Fr</value>
+			</map-entry>
+			<map-entry>
+				<key>4</key>
+				<value>de_DE</value>
+			</map-entry>
+			<map-entry>
+				<key>1</key>
+				<value>zh_TW</value>
+			</map-entry>
+			<map-entry>
+				<key>2</key>
+				<value>en_US</value>
+			</map-entry>
+		</map-entries>
+	</managed-bean>
+
+	<!-- Global Navigation Mappings Begin-->
+	<navigation-rule>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>setLanguage</from-outcome>
+			<to-view-id>/welcome.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>index</from-outcome>
+			<to-view-id>/index.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+	<!-- Global Navigation Mappings End-->
+
+	<application>
+		<resource-bundle>
+			<base-name>com.hnl.i18n.rb.bundles.TestResourceBundle</base-name>
+			<var>msg</var>
+		</resource-bundle>
+		<locale-config>
+			<default-locale>en_US</default-locale>
+			<supported-locale>de_DE</supported-locale>
+			<supported-locale>zh_TW</supported-locale>
+			<supported-locale>fr_FR</supported-locale>
+		</locale-config>
+	</application>
+
+
+</faces-config>
