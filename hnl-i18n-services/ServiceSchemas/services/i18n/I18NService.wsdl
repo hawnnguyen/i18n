@@ -1,0 +1,63 @@
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://sita.aero/soa/services/i18n/i18nservice/2010/08" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:schema="http://sita.aero/soa/schemas/i18n/i18nservice/2010/08" name="I18NService" targetNamespace="http://sita.aero/soa/services/i18n/i18nservice/2010/08">
+	<wsdl:types>
+		<xsd:schema targetNamespace="http://sita.aero/soa/schemas/i18n/i18nservice/2010/08" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://sita.aero/soa/schemas/i18n/i18nservice/2010/08" elementFormDefault="qualified" attributeFormDefault="unqualified">
+			<xsd:include schemaLocation="../../Schemas/i18n/I18NServiceRequest.xsd"/>
+			<xsd:include schemaLocation="../../Schemas/i18n/I18NServiceResponse.xsd"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="I18NServiceRequest">
+		<wsdl:part name="I18NServiceRequest" element="schema:I18NServiceRequest"/>
+	</wsdl:message>
+	<wsdl:message name="I18NServiceResponse">
+		<wsdl:part name="I18NServiceResponse" element="schema:I18NServiceResponse"/>
+	</wsdl:message>
+	<wsdl:portType name="I18NServiceImpl">
+		<wsdl:operation name="convertResource">
+			<wsdl:input message="tns:I18NServiceRequest"/>
+			<wsdl:output message="tns:I18NServiceResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="formatResource">
+			<wsdl:input message="tns:I18NServiceRequest"/>
+			<wsdl:output message="tns:I18NServiceResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="getResources">
+			<wsdl:input message="tns:I18NServiceRequest"/>
+			<wsdl:output message="tns:I18NServiceResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="I18NServiceImplSOAP" type="tns:I18NServiceImpl">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="convertResource">
+			<soap:operation soapAction=""/>
+			<wsdl:input>
+				<soap:body parts="I18NServiceRequest" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="I18NServiceResponse" use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="formatResource">
+			<soap:operation soapAction=""/>
+			<wsdl:input>
+				<soap:body parts="I18NServiceRequest" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="I18NServiceResponse" use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getResources">
+			<soap:operation soapAction=""/>
+			<wsdl:input>
+				<soap:body parts="I18NServiceRequest" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="I18NServiceResponse" use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="I18NServiceImpl">
+		<wsdl:port name="I18NServiceImplSOAP" binding="tns:I18NServiceImplSOAP">
+			<soap:address location="http://localhost:8080/axis2/services/I18NServiceImpl"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>
