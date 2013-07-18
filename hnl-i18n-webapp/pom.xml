@@ -165,9 +165,9 @@
 		</repository>
 
 		<repository>
-			<id>jvnet-nexus-snapshots</id>
-			<name>jvnet-nexus-snapshots</name>
-			<url>https://maven.java.net/content/repositories/snapshots/</url>
+			<id>jvnet-nexus-releases</id>
+			<name>jvnet-nexus-releases</name>
+			<url>https://maven.java.net/content/repositories/releases/</url>
 		</repository>
 
 	</repositories>
